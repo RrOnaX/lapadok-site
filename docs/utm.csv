@@ -1,0 +1,6 @@
+Номер,Канал,Размещение,Source,Medium,Campaign,Content,Страница,Полная ссылка
+U-01,Instagram,Ссылка в шапке профиля,instagram,social,vaccine_nov_2026,bio,index.html,https://lapadok-site.vercel.app/?utm_source=instagram&utm_medium=social&utm_campaign=vaccine_nov_2026&utm_content=bio
+U-02,Instagram,Автоответ в Reel,instagram,social,vaccine_nov_2026,reel_kit_01,pet-kit.html,https://lapadok-site.vercel.app/pet-kit.html?utm_source=instagram&utm_medium=social&utm_campaign=vaccine_nov_2026&utm_content=reel_kit_01
+U-05,ВКонтакте,Пост в сообществе,vk,social,vaccine_nov_2026,post_01,vaccines.html,https://lapadok-site.vercel.app/vaccines.html?utm_source=vk&utm_medium=social&utm_campaign=vaccine_nov_2026&utm_content=post_01
+U-07,Telegram,Пост в канале,telegram,social,vaccine_nov_2026,post_01,vaccines.html,https://lapadok-site.vercel.app/vaccines.html?utm_source=telegram&utm_medium=social&utm_campaign=vaccine_nov_2026&utm_content=post_01
+U-09,YouTube,Описание видео,youtube,social,vaccine_nov_2026,video_01,pet-kit.html,https://lapadok-site.vercel.app/pet-kit.html?utm_source=youtube&utm_medium=social&utm_campaign=vaccine_nov_2026&utm_content=video_01
