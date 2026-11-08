@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Запись и контакты — ЛапаДок</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <button class="burger" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="vaccines.html">Календарь прививок</a>
+      <a href="pet-kit.html">Аптечка</a>
+      <a href="contacts.html" class="active">Контакты</a>
+    </nav>
+    <a href="tel:+79006062424" class="header-phone" data-event="contact_click" data-contact-type="phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section class="page-header"><div class="container"><h1>Запись на приём</h1><p>Оставьте заявку — мы перезвоним</p></div></section>
+
+<section><div class="container">
+  <div class="form-wrapper">
+    <form id="leadForm" novalidate>
+      <input type="hidden" name="request_id" id="requestId">
+      <input type="hidden" name="utm_source" id="utmSource">
+      <input type="hidden" name="utm_medium" id="utmMedium">
+      <input type="hidden" name="utm_campaign" id="utmCampaign">
+      <input type="hidden" name="utm_content" id="utmContent">
+      
+      <div class="form-group">
+        <label>Ваше имя *</label>
+        <input type="text" name="name" required minlength="2" maxlength="60">
+        <div class="error-text">Введите имя (2–60 символов)</div>
+      </div>
+      <div class="form-group">
+        <label>Телефон *</label>
+        <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__">
+        <div class="error-text">Введите телефон в формате +7XXXXXXXXXX</div>
+      </div>
+      <div class="form-group">
+        <label>Email (необязательно)</label>
+        <input type="email" name="email">
+        <div class="error-text">Введите корректный email</div>
+      </div>
+      <div class="form-group">
+        <label>Вид животного *</label>
+        <select name="pet_type" required>
+          <option value="cat">Кошка</option>
+          <option value="dog">Собака</option>
+          <option value="rabbit">Кролик</option>
+          <option value="other">Другое</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Услуга *</label>
+        <select name="service" required>
+          <option value="consult">Первичный приём</option>
+          <option value="vaccine">Вакцинация</option>
+          <option value="chip">Чипирование</option>
+          <option value="sterilization">Стерилизация</option>
+          <option value="analysis">Анализы</option>
+          <option value="home_visit">Вызов врача на дом</option>
+        </select>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="agree" required>
+        <label for="agree">Я согласен на обработку персональных данных (<a href="privacy.html" target="_blank">политика</a>)</label>
+      </div>
+      <button type="submit" class="btn" style="width:100%" id="submitBtn">Записаться</button>
+    </form>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner">
+  <div><h3>ЛАПАДОК</h3><p>614 147, г. Новогорск, ул. Луговая, д. 40</p></div>
+  <div><h4>Контакты</h4><p><a href="tel:+79006062424" data-event="contact_click" data-contact-type="phone">+7 (900) 606-24-24</a></p><p><a href="mailto:vet@lapadok.example" data-event="contact_click" data-contact-type="email">vet@lapadok.example</a></p></div>
+  <div><h4>Мессенджеры</h4><div class="social-icons"><a href="https://t.me/lapadok" data-event="messenger_click" data-messenger="telegram">✈️</a><a href="https://wa.me/79006062424" data-event="messenger_click" data-messenger="whatsapp">💬</a></div></div>
+</div></footer>
+
+<script src="js/analytics.js"></script>
+<script src="js/form.js"></script>
+<script>
+document.querySelector('.burger').addEventListener('click', () => document.querySelector('.nav').classList.toggle('active'));
+
+const form = document.getElementById('leadForm');
+const submitBtn = document.getElementById('submitBtn');
+
+// Заполняем UTM и request_id
+const utm = window.getUTM();
+document.getElementById('utmSource').value = utm.utm_source;
+document.getElementById('utmMedium').value = utm.utm_medium;
+document.getElementById('utmCampaign').value = utm.utm_campaign;
+document.getElementById('utmContent').value = utm.utm_content;
+document.getElementById('requestId').value = 'REQ-' + window.generateUUID();
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  // Сброс ошибок
+  form.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+  form.querySelectorAll('input,select').forEach(i => i.classList.remove('error'));
+  
+  let hasError = false;
+  const name = form.name.value.trim();
+  const phone = form.phone.value.trim();
+  const email = form.email.value.trim();
+  const agree = document.getElementById('agree').checked;
+
+  if (!window.validateName(name)) { form.name.classList.add('error'); form.name.parentElement.classList.add('has-error'); hasError = true; window.trackEvent('form_error', {field_name: 'name', error_type: 'validation'}); }
+  if (!window.validatePhone(phone)) { form.phone.classList.add('error'); form.phone.parentElement.classList.add('has-error'); hasError = true; window.trackEvent('form_error', {field_name: 'phone', error_type: 'validation'}); }
+  if (email && !window.validateEmail(email)) { form.email.classList.add('error'); form.email.parentElement.classList.add('has-error'); hasError = true; window.trackEvent('form_error', {field_name: 'email', error_type: 'validation'}); }
+  if (!agree) { hasError = true; alert('Необходимо согласие на обработку данных'); window.trackEvent('form_error', {field_name: 'agree', error_type: 'required'}); }
+
+  if (hasError) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Отправка...';
+  window.trackEvent('form_start', {form_id: 'lead_form'});
+
+  const data = {
+    request_id: document.getElementById('requestId').value,
+    name, phone, email,
+    pet_type: form.pet_type.value,
+    service: form.service.value,
+    utm_source: utm.utm_source,
+    utm_medium: utm.utm_medium,
+    utm_campaign: utm.utm_campaign,
+    utm_content: utm.utm_content
+  };
+
+  // ЗАГЛУШКА: сохраняем в sessionStorage для thanks.html
+  // Реальный запрос в Apps Script добавим позже
+  sessionStorage.setItem('leadData', JSON.stringify(data));
+  
+  // Имитация успешной отправки
+  await new Promise(r => setTimeout(r, 800));
+  window.trackEvent('form_submit', {form_id: 'lead_form'});
+  window.trackEvent('generate_lead', {lead_pet_type: data.pet_type, lead_service: data.service, lead_source: data.utm_source});
+  
+  window.location.href = 'thanks.html';
+});
+</script>
+</body>
+</html>

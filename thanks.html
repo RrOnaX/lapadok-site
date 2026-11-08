@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Спасибо! — ЛапаДок</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <a href="tel:+79006062424" class="header-phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section style="padding-top:60px"><div class="container">
+  <div class="thanks-box">
+    <div class="check">✓</div>
+    <h1 style="color:var(--green);margin-bottom:15px">Спасибо! Заявка принята</h1>
+    <p>Мы перезвоним вам в ближайшее время.</p>
+    <p style="margin-top:20px;font-weight:500">Номер вашей заявки:</p>
+    <div class="req-id" id="reqId">REQ-...</div>
+    
+    <h3 style="color:var(--green);margin:30px 0 15px">Как подготовить питомца к приёму</h3>
+    <ul style="text-align:left;line-height:1.8;padding-left:20px;list-style:disc">
+      <li>Не кормите питомца за 8–12 часов до приёма, если назначено.</li>
+      <li>Возьмите ветеринарный паспорт, если есть.</li>
+      <li>Кошек — в переноске, собак — на поводке.</li>
+      <li>За 10–14 дней до вакцинации — дегельминтизация.</li>
+    </ul>
+
+    <div style="margin-top:30px">
+      <p>Следите за нами:</p>
+      <div class="social-icons" style="justify-content:center;margin-top:10px">
+        <a href="#" data-event="social_click" data-network="instagram" data-page-section="thanks">📷</a>
+        <a href="#" data-event="social_click" data-network="vk" data-page-section="thanks">VK</a>
+        <a href="#" data-event="social_click" data-network="telegram" data-page-section="thanks">✈️</a>
+      </div>
+    </div>
+    <a href="index.html" class="btn" style="margin-top:30px">На главную</a>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner">
+  <div><h3>ЛАПАДОК</h3></div>
+  <div><p><a href="tel:+79006062424">+7 (900) 606-24-24</a></p></div>
+</div></footer>
+<script src="js/analytics.js"></script>
+<script>
+// Показываем номер заявки
+const data = JSON.parse(sessionStorage.getItem('leadData') || '{}');
+if (data.request_id) {
+  document.getElementById('reqId').textContent = data.request_id;
+}
+</script>
+</body>
+</html>

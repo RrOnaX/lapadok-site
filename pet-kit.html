@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аптечка питомца — ЛапаДок</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <button class="burger" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="vaccines.html">Календарь прививок</a>
+      <a href="pet-kit.html" class="active">Аптечка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a href="tel:+79006062424" class="header-phone" data-event="contact_click" data-contact-type="phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section class="page-header"><div class="container"><h1>Аптечка кошки и собаки</h1><p>Что должно быть под рукой</p></div></section>
+
+<section><div class="container" style="max-width:800px">
+  <div class="kit-list">
+    <ul>
+      <li>Бинт стерильный и нестерильный</li>
+      <li>Вата, ватные диски</li>
+      <li>Перекись водорода 3%</li>
+      <li>Хлоргексидин</li>
+      <li>Антисептик для рук</li>
+      <li>Термометр</li>
+      <li>Пинцет</li>
+      <li>Шприцы 2, 5, 10 мл</li>
+      <li>Активированный уголь</li>
+      <li>Средства от блох и клещей</li>
+    </ul>
+    <a href="#" class="btn btn-outline" style="margin-top:20px" data-event="file_download" data-file-name="pet-kit.pdf" data-file-extension="pdf">Скачать PDF</a>
+  </div>
+  <div class="promo-box">
+    <h3>Промокод на скидку 20%</h3>
+    <div class="promo-code">VACKINA</div>
+    <br>
+    <button id="promoBtn" data-event="promo_copy" data-promo-code="VACKINA">Скопировать промокод</button>
+  </div>
+  <a href="contacts.html" class="btn" style="width:100%" data-event="cta_click" data-button-name="petkit_book" data-page-section="pet_kit">Записаться на приём</a>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner">
+  <div><h3>ЛАПАДОК</h3></div>
+  <div><p><a href="tel:+79006062424">+7 (900) 606-24-24</a></p></div>
+</div></footer>
+<script src="js/analytics.js"></script>
+<script>
+document.querySelector('.burger').addEventListener('click', () => document.querySelector('.nav').classList.toggle('active'));
+document.getElementById('promoBtn').addEventListener('click', () => {
+  navigator.clipboard.writeText('VACKINA');
+  alert('Промокод VACKINA скопирован!');
+});
+</script>
+</body>
+</html>

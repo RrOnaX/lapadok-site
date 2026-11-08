@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ветеринарная клиника «ЛапаДок» — круглосуточная помощь</title>
+<meta name="description" content="Круглосуточная ветеринарная клиника «ЛапаДок». Вакцинация со скидкой 20%, опытные врачи, современное оборудование.">
+<meta property="og:title" content="Ветеринарная клиника «ЛапаДок»">
+<meta property="og:description" content="Круглосуточная помощь. Вакцинация -20%.">
+<meta property="og:image" content="https://lapadok.vercel.app/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232E8B57'/><text x='50' y='65' text-anchor='middle' font-size='50' fill='white'>🐾</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <button class="burger" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html" class="active">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="vaccines.html">Календарь прививок</a>
+      <a href="pet-kit.html">Аптечка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a href="tel:+79006062424" class="header-phone" data-event="contact_click" data-contact-type="phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="badge">Акция до конца ноября</div>
+      <h1>Комплексная вакцинация со скидкой <span style="color:var(--green)">−20%</span></h1>
+      <p>Забота о здоровье вашего питомца 24/7. Опытные врачи, современное оборудование и внимательное отношение.</p>
+      <a href="contacts.html" class="btn" data-event="cta_click" data-button-name="hero_vaccine" data-page-section="hero">Записаться на вакцинацию</a>
+    </div>
+    <div class="hero-image"><div class="photo">🐕</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Кто ваш питомец?</h2>
+    <div class="pet-selector">
+      <div class="pet-card" data-event="pet_type_select" data-pet-type="cat"><div class="pet-emoji">🐱</div><h3>Кошка</h3></div>
+      <div class="pet-card" data-event="pet_type_select" data-pet-type="dog"><div class="pet-emoji">🐶</div><h3>Собака</h3></div>
+      <div class="pet-card" data-event="pet_type_select" data-pet-type="rabbit"><div class="pet-emoji">🐰</div><h3>Кролик</h3></div>
+      <div class="pet-card" data-event="pet_type_select" data-pet-type="other"><div class="pet-emoji">🐾</div><h3>Другое</h3></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Наши услуги</h2>
+    <div class="services-grid">
+      <div class="service-card" data-event="service_view" data-service-name="Первичный приём"><h3>Первичный приём</h3><p>Осмотр, консультация, план лечения.</p><div class="price">1 200 ₽</div></div>
+      <div class="service-card" data-event="service_view" data-service-name="Вакцинация"><h3>Комплексная вакцинация</h3><p>Кошки — 2 400 ₽, собаки — 2 900 ₽ (по акции −20%).</p><div class="price">от 1 920 ₽</div></div>
+      <div class="service-card" data-event="service_view" data-service-name="Чипирование"><h3>Чипирование</h3><p>Быстро и безболезненно.</p><div class="price">1 500 ₽</div></div>
+      <div class="service-card" data-event="service_view" data-service-name="Стерилизация"><h3>Стерилизация кошки</h3><p>Опытный хирург, безопасно.</p><div class="price">от 6 500 ₽</div></div>
+      <div class="service-card" data-event="service_view" data-service-name="Анализы"><h3>Анализы крови</h3><p>Результаты в день обращения.</p><div class="price">от 900 ₽</div></div>
+      <div class="service-card" data-event="service_view" data-service-name="УЗИ"><h3>УЗИ</h3><p>Современная диагностика.</p><div class="price">1 800 ₽</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Наши врачи</h2>
+    <div class="doctors-grid">
+      <div class="doctor-card" data-event="doctor_view" data-doctor-id="1" data-specialty="Терапевт"><div class="doctor-avatar">👩‍⚕️</div><h3>Анна Смирнова</h3><p>Врач-терапевт</p></div>
+      <div class="doctor-card" data-event="doctor_view" data-doctor-id="2" data-specialty="Хирург"><div class="doctor-avatar">👨‍⚕️</div><h3>Иван Петров</h3><p>Врач-хирург</p></div>
+      <div class="doctor-card" data-event="doctor_view" data-doctor-id="3" data-specialty="Офтальмолог"><div class="doctor-avatar">👩‍⚕️</div><h3>Елена Козлова</h3><p>Врач-офтальмолог</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question">Как подготовить питомца к вакцинации?</button><div class="faq-answer"><p>За 10–14 дней проведите дегельминтизацию. В день вакцинации питомец должен быть здоров. При симптомах — обратитесь к врачу.</p></div></div>
+      <div class="faq-item"><button class="faq-question">Сколько стоит приём?</button><div class="faq-answer"><p>Первичный приём — 1 200 ₽. Вакцинация кошки — 2 400 ₽, собаки — 2 900 ₽ (по акции −20%).</p></div></div>
+      <div class="faq-item"><button class="faq-question">Работаете ли вы ночью?</button><div class="faq-answer"><p>Да, мы работаем круглосуточно. Ночью — экстренные случаи.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><h3>ЛАПАДОК</h3><p>Круглосуточная ветеринарная клиника</p><p>614 147, г. Новогорск, ул. Луговая, д. 40</p></div>
+    <div><h4>Контакты</h4><p><a href="tel:+79006062424" data-event="contact_click" data-contact-type="phone">+7 (900) 606-24-24</a></p><p><a href="mailto:vet@lapadok.example" data-event="contact_click" data-contact-type="email">vet@lapadok.example</a></p></div>
+    <div><h4>Соцсети</h4><div class="social-icons"><a href="#" data-event="social_click" data-network="instagram" data-page-section="footer">📷</a><a href="#" data-event="social_click" data-network="vk" data-page-section="footer">VK</a><a href="#" data-event="social_click" data-network="telegram" data-page-section="footer">✈️</a></div></div>
+  </div>
+  <div class="container" style="text-align:center;margin-top:30px;font-size:12px;color:#888"><p>© 2026 ООО «ЛапаДок». <a href="privacy.html">Политика конфиденциальности</a></p></div>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script>
+document.querySelector('.burger').addEventListener('click', () => document.querySelector('.nav').classList.toggle('active'));
+document.querySelectorAll('.faq-question').forEach(btn => btn.addEventListener('click', () => {
+  btn.parentElement.classList.toggle('active');
+  if (btn.parentElement.classList.contains('active')) {
+    window.trackEvent('faq_open', { question_id: btn.textContent.substring(0,30) });
+  }
+}));
+</script>
+</body>
+</html>

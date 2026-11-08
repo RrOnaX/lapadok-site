@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услуги и цены — ЛапаДок</title>
+<meta name="description" content="Полный прайс-лист ветеринарной клиники ЛапаДок.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <button class="burger" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html" class="active">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="vaccines.html">Календарь прививок</a>
+      <a href="pet-kit.html">Аптечка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a href="tel:+79006062424" class="header-phone" data-event="contact_click" data-contact-type="phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section class="page-header"><div class="container"><h1>Услуги и цены</h1><p>Полный перечень ветеринарных услуг</p></div></section>
+
+<section><div class="container">
+  <div class="services-grid">
+    <div class="service-card" data-event="service_view" data-service-name="Первичный приём"><h3>Первичный приём</h3><p>Осмотр, консультация, план лечения.</p><div class="price">1 200 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Первичный приём" data-price-from="1200" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Вакцинация кошки"><h3>Вакцинация кошки</h3><p>Комплексная, по акции −20%.</p><div class="price">2 400 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Вакцинация кошки" data-price-from="2400" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Вакцинация собаки"><h3>Вакцинация собаки</h3><p>Комплексная, по акции −20%.</p><div class="price">2 900 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Вакцинация собаки" data-price-from="2900" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Чипирование"><h3>Чипирование</h3><p>Международный стандарт.</p><div class="price">1 500 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Чипирование" data-price-from="1500" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Стерилизация"><h3>Стерилизация кошки</h3><p>Безопасно.</p><div class="price">от 6 500 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Стерилизация" data-price-from="6500" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Анализы"><h3>Анализы крови</h3><p>Результат в день обращения.</p><div class="price">от 900 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Анализы" data-price-from="900" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="УЗИ"><h3>УЗИ</h3><p>Современное оборудование.</p><div class="price">1 800 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="УЗИ" data-price-from="1800" style="margin-top:15px">Записаться</a></div>
+    <div class="service-card" data-event="service_view" data-service-name="Вызов на дом"><h3>Вызов врача на дом</h3><p>Выезд по городу.</p><div class="price">2 500 ₽</div><a href="contacts.html" class="btn" data-event="select_service" data-service-name="Вызов на дом" data-price-from="2500" style="margin-top:15px">Записаться</a></div>
+  </div>
+  <div style="text-align:center;margin-top:40px"><a href="#" class="btn btn-outline" data-event="file_download" data-file-name="price-list.pdf" data-file-extension="pdf">Скачать прайс PDF</a></div>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner">
+  <div><h3>ЛАПАДОК</h3><p>Круглосуточно</p></div>
+  <div><p><a href="tel:+79006062424">+7 (900) 606-24-24</a></p></div>
+</div></footer>
+<script src="js/analytics.js"></script>
+<script>document.querySelector('.burger').addEventListener('click', () => document.querySelector('.nav').classList.toggle('active'));</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Врачи — ЛапаДок</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">🐾</span>ЛАПАДОК</a>
+    <button class="burger" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html" class="active">Врачи</a>
+      <a href="vaccines.html">Календарь прививок</a>
+      <a href="pet-kit.html">Аптечка</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <a href="tel:+79006062424" class="header-phone" data-event="contact_click" data-contact-type="phone">📞 +7 (900) 606-24-24</a>
+  </div>
+</header>
+
+<section class="page-header"><div class="container"><h1>Наши врачи</h1><p>Опытная команда специалистов</p></div></section>
+
+<section><div class="container">
+  <div class="doctors-grid">
+    <div class="doctor-card" data-event="doctor_view" data-doctor-id="1" data-specialty="Терапевт"><div class="doctor-avatar">👩‍⚕️</div><h3>Анна Смирнова</h3><p>Врач-терапевт</p><a href="contacts.html" class="btn" data-event="cta_click" data-button-name="doctor_1_book" data-page-section="doctors" style="margin-top:15px">Записаться</a></div>
+    <div class="doctor-card" data-event="doctor_view" data-doctor-id="2" data-specialty="Хирург"><div class="doctor-avatar">👨‍⚕️</div><h3>Иван Петров</h3><p>Врач-хирург</p><a href="contacts.html" class="btn" data-event="cta_click" data-button-name="doctor_2_book" data-page-section="doctors" style="margin-top:15px">Записаться</a></div>
+    <div class="doctor-card" data-event="doctor_view" data-doctor-id="3" data-specialty="Офтальмолог"><div class="doctor-avatar">👩‍⚕️</div><h3>Елена Козлова</h3><p>Врач-офтальмолог</p><a href="contacts.html" class="btn" data-event="cta_click" data-button-name="doctor_3_book" data-page-section="doctors" style="margin-top:15px">Записаться</a></div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="container footer-inner">
+  <div><h3>ЛАПАДОК</h3></div>
+  <div><p><a href="tel:+79006062424">+7 (900) 606-24-24</a></p></div>
+</div></footer>
+<script src="js/analytics.js"></script>
+<script>document.querySelector('.burger').addEventListener('click', () => document.querySelector('.nav').classList.toggle('active'));</script>
+</body>
+</html>
